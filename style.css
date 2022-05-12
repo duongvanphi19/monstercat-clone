@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Nunito:wght@300;500;700;900&family=Poppins&display=swap');
+:root{
+    --clr-white: #fefefe;
+    --clr-bg: #000000;
+    --clr-text: #fdfdfd;
+    --clr-text-sec: #777777;
+    --clr-text-invert: #333333;
+    --clr-btn-primary: #1dd1a1;
+    --clr-navbar: rgba(0, 0, 0, 0.7);
+    
+    --sz-card-item-gap: 0.6rem;
+    --sz-border: 0.08rem;
+    --sz-padding: 3rem;
+    
+    --fz-header: 1.8rem;
+    --fz-title: 1.6rem;
+    --fz-text: 1.2rem;
+
+    --ff-title: 'Montserrat Subrayada', sans-serif;
+    --ff-body: 'Nunito', sans-serif;
+}
+
+
+@media (prefers-color-scheme: light) {
+    --clr-bg: #fff;
+    --clr-text: #222;
+    --clr-text-sec: #444;
+    --clr-text-invert: #fafafa;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+a,p{
+    text-decoration: none;
+    color: var(--clr-text);
+    font-family: var(--ff-body);
+
+}
+body{
+    background-image: url("/assets/images/bg.jpg");
+    color: var(--clr-text);
+    font-family: var(--ff-title);
+    overflow-x: hidden;
+}
+
+.main{
+    margin-inline: auto;
+    width: min(48rem, 90%);
+}
+
+.divider{
+    width: 100%;
+    height: var(--sz-border);
+    background-color: var(--clr-text);
+}
+
+.text-primary{
+    color: var(--clr-btn-primary);
+}
+
+section{
+    margin: var(--sz-padding) 0;
+}
+
+.section-title{
+    font-size: var(--fz-title);
+    margin-bottom: 1rem;
+}
+
+/* ----------button---------- */
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--clr-text);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: calc(var(--fz-text)*0.8);
+    line-height: 1.3rem;
+    padding: 0.6rem 1.4rem;
+    transition: 0.3s;
+    background-color: transparent;
+}
+.btn-listen{
+    max-width: 200px;
+    margin-right: 0.6rem;
+
+}
+button.btn{
+    outline: none;
+    border: none;
+}
+
+.btn-primary{
+    background-color: var(--clr-btn-primary);
+}
+.btn:hover{
+    color: var(--clr-text-invert);
+    background-color: var(--clr-text);
+}
+
+.btn:hover > img{
+    filter: invert(1);
+}
+
+.btn-outline{
+    border: solid var(--sz-border) var(--clr-text);
+}
+.btn > img{
+    margin-right: 0.3rem;
+    width: 1rem;
+    height: 1rem;
+}
+
+/* ----------header---------- */
+.header, .menu-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.8rem;
+}
+
+.header{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    backdrop-filter: blur(1rem);
+    background-color: var(--clr-navbar);
+    z-index: 10;
+}
+
+.logo > img,
+.menu-icon > img,
+.social-links >img{
+    width: 2rem;
+    height: 2rem;
+}
+
+/* ----------menu---------- */
+.header .social-links,
+#menuToggle {
+    display: none;
+}
+
+#menuToggle:checked ~ .menu{
+    right: 0;
+
+}
+
+.menu{
+    height: 100vh;
+    width: min(30rem, 100vw);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    right: -100%;
+    background-color: var(--clr-bg);
+    transition: 0.3s;
+    padding: 1rem 0;
+}
+.menu-header .logo{
+    display: flex;
+    align-items: center;
+    font-family: var(--ff-body);
+    font-size: var(--fz-title);
+    font-weight: bold;
+}
+
+.menu-list{
+    list-style: none;
+    overflow: scroll;
+    max-height: 20rem;
+}
+
+.menu-list a{
+    display: inline-block;
+    margin: 0.6rem 0;
+    font-family: var(--ff-title);
+}
+
+.menu-bottom{
+    margin: var(--sz-padding) 0;
+}
+
+.login-box{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--sz-padding) 0;
+}
+
+.login-box > span{
+    margin: 0 0.6rem;
+}
+
+/* ----------body---------- */
+
+section#album-cover::after{
+    content: "" ;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: -1;
+    background-image: url("assets/images/600.webp"), linear-gradient(transparent, black);
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: blur(0.6rem);
+    
+}
+
+
+.album-btns{
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.cover-image > img{
+    max-width: 100%;
+    width: 100%;
+    margin: var(--sz-padding) 0;
+}
+
+.album-released-date{
+    font-size: calc(var(--fz-text)*0.8);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    
+}
+.album-title{
+    font-size: var(--fz-header);
+    text-transform: uppercase;
+    margin: 1.5rem 0 0.6rem 0;
+}
+
+.album-artist{
+    font-size: var(--fz-text);
+    margin-bottom: 2rem;
+}
+
+
+/* ----------artists section---------- */
+.artists-box{
+    display: none;
+}
+
+.artists-box img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    
+}
+
+/* ----------stream section---------- */
+.stream-box{
+    display: inline-flex;
+    align-items: center;
+    border: var(--sz-border) solid var(--clr-text);
+}
+
+.stream-box > a{
+    display: block;
+    border-left:  var(--sz-border) solid var(--clr-text);
+    aspect-ratio: 1/1;
+    padding: 0.6rem;
+    
+}
+
+.stream-box > a:first-child{
+    border-left:  none;
+    aspect-ratio: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.stream-box > a:first-child :nth-child(n+1){
+    margin-left: 0.6rem;
+}
+
+/* ----------track list section---------- */
+.track-list{
+    width: 100%;
+    font-family: var(--ff-body);
+}
+
+.track-list td{
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.6rem;
+    font-size: var(--fz-text);
+}
+
+.track-list .song-title{
+     font-size: var(--fz-text);
+     line-height: 1.3rem;
+     text-transform: capitalize;
+}
+
+.track-list .artist{
+    font-size: calc(var(--fz-text)*0.8);
+    font-style: italic;
+}
+.track-list td:nth-child(3){
+    text-align: left;
+    flex-basis: 100%;
+    
+}
+
+.track-list tr{
+    display: flex;
+    align-items: center;
+    margin: 0.3rem 0;
+}
+
+/* ----------recommend album section---------- */
+
+    /* ----------card---------- */
+.card-image img{
+    max-width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.card-title{
+    font-family: var(--ff-title);
+    font-size: var(--fz-text);
+}
+.card-content > .subtitle{
+    font-family: var(--ff-body);
+    text-transform: capitalize;
+    font-size: calc(var(--fz-text)*0.8);
+    font-style: italic;
+    font-weight: 300;
+}
+
+.recommend-box{
+    display: flex;
+    flex-wrap: wrap;
+    margin: calc(-1*var(--sz-card-item-gap));
+}
+
+
+.recommend-box > .item{
+    width: 50%;
+    padding: var(--sz-card-item-gap);
+}
+
+    /* ----------footer---------- */
+.bottom-nav{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    row-gap:var(--sz-padding);
+}
+.bottom-nav-list li a{
+    font-size: var(--fz-text);
+    line-height: 2rem;
+    font-family: "Montserrat Subrayada", sans-serif;
+}
+
+
+.get-news-form{
+    width: 100%;
+}
+
+.get-news-form .input-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 0.3rem;
+    border-bottom: calc(var(--sz-border)*0.6) solid var(--clr-text-sec);
+}
+
+.get-news-form input{
+    color: var(--clr-text);
+    font-weight: 300;
+    background-color:transparent;
+    outline: none;
+    border: none;
+    font-size: var(--fz-text);
+    font-family: var(--ff-body);
+}
+
+.get-news-form input[type="email"]{
+    max-width: 100%;
+}
+.bottom-nav-list{
+   list-style: none; 
+}
+
+.form-header{
+    font-size: var(--fz-text);
+    color: var(--clr-text-sec);
+}
+.form-subheader, .copyright{
+    font-family: var(--ff-body);
+    font-size: var(--fz-text);
+    font-weight: 300;
+    font-style: italic;
+    margin: 0.8rem 0;
+    
+}
+
+.bottom-nav, .footer-info, .footer-bottom{
+    padding: var(--sz-padding) 0;
+}
+
+
+.footer-bottom > p{
+    font-family: var(--ff-body);
+    text-align: center;
+    padding: 0.8rem 0;
+    font-style: italic;
+    font-weight: 300;
+}
+
+
+.footer-top{
+    display: inline-grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+
+
+.social-links > a{
+    display: inline-block;
+    padding: 0.6rem;
+    font-family: var(--ff-body);
+}
+
+/* ----------responsive (mobile-first)---------- */
+
+    
+@media screen and (min-width:576px){
+    .header .social-links{
+        display: block;
+    }
+    .footer-top{
+        grid-template-columns: 1fr 1fr;
+        text-align: left;
+        column-gap: var(--fz-title);
+    }
+    
+}
+@media screen and (min-width:768px){
+    .artists-box{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+        
+    }
+    .bottom-nav{
+        grid-template-columns: 66.666% 33.334%;
+     }
+    .bottom-nav-list{
+       column-count: 2;
+    }
+
+}
+
+@media screen and (min-width:1024px){
+    
+    #album-cover .main{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--sz-padding);        
+        align-items: center;
+    }
+    .cover-image > img{
+        margin: 0;
+    }
+    
+    .recommend-box > .item{
+        width: 25%;
+    }
+    
+    
+}
+
+@media screen and (min-width:1200px){
+    .header{
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+    .header .social-links{
+        position: absolute;
+        right: 10vw;
+        top: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
