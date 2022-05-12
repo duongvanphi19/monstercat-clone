@@ -21,7 +21,7 @@
 }
 
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
     --clr-bg: #fff;
     --clr-text: #222;
     --clr-text-sec: #444;
@@ -147,7 +147,7 @@ button.btn{
 }
 
 #menuToggle:checked ~ .menu{
-    right: 0;
+    left: 0;
 
 }
 
@@ -157,7 +157,7 @@ button.btn{
     position: absolute;
     bottom: 0;
     top: 0;
-    right: -100%;
+    left: -100%;
     background-color: var(--clr-bg);
     transition: 0.3s;
     padding: 1rem 0;
