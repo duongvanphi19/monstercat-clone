@@ -1,4 +1,5 @@
 # monstercat-clone
 Clone of the Monstercat music website using CSS.
 
-It is a small exercise to practice CSS on [Frontend Practice] (https://www.frontendpractice.com/projects/monstercat) I do to learn and improve my skill.
+It is a small exercise I did to practice CSS.
+<https://www.frontendpractice.com/projects/monstercat>
