@@ -19,16 +19,6 @@
     --ff-title: 'Montserrat Subrayada', sans-serif;
     --ff-body: 'Nunito', sans-serif;
 }
-
-
-@media (prefers-color-scheme: dark) {
-    --clr-bg: #fff;
-    --clr-text: #222;
-    --clr-text-sec: #444;
-    --clr-text-invert: #fafafa;
-}
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -125,7 +115,7 @@ button.btn{
 }
 
 .header{
-    position: absolute;
+    position: sticky;
     top: 0;
     width: 100%;
     backdrop-filter: blur(1rem);
@@ -151,8 +141,10 @@ button.btn{
 
 }
 
+
+
 .menu{
-    height: 100vh;
+    min-height: 100vh;
     width: min(30rem, 100vw);
     position: absolute;
     bottom: 0;
